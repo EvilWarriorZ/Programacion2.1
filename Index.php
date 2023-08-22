@@ -151,10 +151,6 @@
 </div>
 <p>Datos de la tabla</p>
 <?php 
-include ("conexion.php");
-$consulta = "SELECT * from productos";
-$juguetes = mysqli_query ($conexion, $consulta);
-
 
 
 ?>
@@ -163,22 +159,24 @@ $juguetes = mysqli_query ($conexion, $consulta);
 		<thead>
 		<tr>
 			<th>ID</th>
-			<th>NOMBRE</th>
-			<th>APELLIDO</th>
-			<th>TELEFONO</th>
-			<th>ESTADIA</th>
-			<th>HABITACION</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
+			<th>Precio</th>
+			<th>Imagen</th>
 		</tr>
 		</thead>
-<?php while ($row = mysql_fetch_array($juguetes)){?>
-	<td><?php $row['id'] ?></td>
-    <td><?php $row['nombre'] ?></td>
-    <td><?php $row['apellido'] ?></td>
-    <td><?php $row['telefono'] ?></td>
-    <td><?php $row['dias'] ?></td>
-    <td><?php $row['habitaciones'] ?></td>
-	
-<?php} ?>
+<?php 
+include ("conexion.php");
+$consulta = "SELECT * from productos";
+$juguetes = mysqli_query($conexion, $consulta);
+
+while ($row = mysqli_fetch_array($juguetes)){?>
+	<td><?php $row['ID'] ?></td>
+    <td><?php $row['Nombre'] ?></td>
+    <td><?php $row['Descripción'] ?></td>
+    <td><?php $row['Precio'] ?></td>
+    <td><?php $row['Imagen'] ?></td>
+<?php } ?>
 </table>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
