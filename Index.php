@@ -99,19 +99,19 @@
 <br>
 <div class="card-group">
 <div class="card">
-<img src="amogas.jpg" width="500px" height="400px" class="card-img-top" alt="...">
+<img src="logo.png" width="500px" height="400px" class="card-img-top" alt="...">
 <div class="card-body">
-<h5 class="card-title">Legos de Among Us</h5>
-<p class="card-text">$1750 (cada 4 unidades)</p>
-<p class="card-text"><small class="text-body-secondary">Sospechosos</small></p>
+<h5 class="card-title">Más próximamente...</h5>
+<p class="card-text"></p>
+<p class="card-text"><small class="text-body-secondary"></small></p>
 </div>
 </div>
 <div class="card">
-<img src="bleyblade.jpeg" width="500px" height="400px" class="card-img-top" alt="...">
+<img src="logo.png" width="500px" height="400px" class="card-img-top" alt="...">
 <div class="card-body">
-<h5 class="card-title">Beyblade</h5>
-<p class="card-text">$1000</p>
-<p class="card-text"><small class="text-body-secondary">Giros en grandes cantidades</small></p>
+<h5 class="card-title">Más próximamente...</h5>
+<p class="card-text"></p>
+<p class="card-text"><small class="text-body-secondary"></small></p>
 </div>
 </div>
 <div class="card">
@@ -149,35 +149,6 @@
   </div>
   <br>
 </div>
-<p>Datos de la tabla</p>
-<?php 
-
-
-?>
-<table class="table table-striped">
-  	
-		<thead>
-		<tr>
-			<th>ID</th>
-			<th>Nombre</th>
-			<th>Descripción</th>
-			<th>Precio</th>
-			<th>Imagen</th>
-		</tr>
-		</thead>
-<?php 
-include ("conexion.php");
-$consulta = "SELECT * from productos";
-$juguetes = mysqli_query($conexion, $consulta);
-
-while ($row = mysqli_fetch_array($juguetes)){?>
-	<td><?php $row['ID'] ?></td>
-    <td><?php $row['Nombre'] ?></td>
-    <td><?php $row['Descripción'] ?></td>
-    <td><?php $row['Precio'] ?></td>
-    <td><?php $row['Imagen'] ?></td>
-<?php } ?>
-</table>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

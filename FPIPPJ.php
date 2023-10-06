@@ -11,7 +11,7 @@
   <!-- Empieza el navbar -->
 <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"> <img src="logo.png" width="50px">   AmongUstrike</a>
+          <a class="navbar-brand" href="index.php"> <img src="logo.png" width="50px">   AmongUstrike</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -69,10 +69,6 @@
 <!-- Termina el navbar -->
 
     <form method="post">
-      <div class="mb-3">
-        <label for="exampleInputID" class="form-label">ID del producto</label>
-        <input type="number" class="form-control" id="exampleInputID" name="ID" required>
-      </div>
         <div class="mb-3">
           <label for="exampleInputName" class="form-label">Nombre del producto</label>
           <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" name="Nombre" required>
@@ -114,8 +110,47 @@
           </div> <br> -->
 
         <button type="submit" class="btn btn-primary" name = "enviar">Añadir producto</button>
-      </form>
-      <a href="Index.html"><br>
+     
+</form>
+
+<p>Datos de la tabla</p>
+
+<table class="table table-striped">
+  	
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
+			<th>Precio</th>
+			<th>Imagen</th>
+		</tr>
+		</thead>
+    <tbody>
+
+    
+<?php 
+include ("conexion.php");
+$consulta = "SELECT * from productos";
+$juguetes = mysqli_query($conexion, $consulta);
+
+while ($row = $juguetes -> fetch_assoc()){
+  echo "<tr>";
+  echo "<td>" . $row ["ID"] . "</td>";
+  echo "<td>" . $row ["Nombre"] . "</td>";
+  echo "<td>" . $row ["Descripción"] . "</td>";
+  echo "<td>" . $row ["Precio"] . "</td>";
+  echo "<td>";
+  echo '<img height="80" width="80" src="' . $row["Imagen"] . '"/>';
+  echo "</td>";
+  echo "</tr>";
+ }
+  ?>
+    </tbody>
+</table>
+
+
+      <a href="Index.php"><br>
       <button class="btn btn-secondary">Atras</button>
       </a>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
